@@ -1,0 +1,149 @@
+body {
+    background: rgba(0, 0, 0 , .9);
+    margin: 0;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header::after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/lambeaufield.jpg);
+    background-size: cover; /* Máximo tamaño del elemento */
+    background-repeat: no repeat;
+    background-position: center;
+    display: block;
+    filter:blur(3px);
+    -webkit-filter: blur(3px);
+    transition: all 1000ms;
+}
+
+.header:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.header:hover .header-content {    /* Cursor este encima del elemento */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.header-content {
+    position: absolute;
+    z-index: 1;  /* Imagen Logo se posicione delante */
+    top: 10%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    color: yellow;
+    transition: all 1000ms;
+}
+
+.header-content .logo {
+    height: 180px;
+    width: 250px;
+    margin: 5px auto;
+}
+
+.title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}
+
+.text {
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* o  1 fr 1fr 1fr (fracción) = 3 columnas */
+    grid-gap: 30px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.text-center {
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light {
+    background: #fff;
+    color: #2f3542;
+}
+
+.bg-dark {
+    background: black;
+    color: #fff;
+}
+
+.services {
+    padding: 1.8rem 0rem;
+}
+
+footer {
+    padding: 2.1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media(max-width:560px) {     /* Para que la página se vea bien en dispositivos más pequeños (móviles) */
+    .header::after {
+        height:70vh;
+    }
+
+    .header-content {
+        top: 5%;
+        margin-top: 5px;
+    }
+
+    .header-content .logo {
+        height: 80px;
+        width: 110px;
+        margin: 0px auto;
+    }
+
+    .header-content .text {
+        display: none;
+    }
+
+    .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 1rem 1rem;
+    }
+}
+
+@media(max-height: 500px) {
+    .header-content .text {
+        display: none;
+    }
+
+    .header-content {
+        top: 3px;
+    }
+
+    .header::after {
+        height: 58vh;
+    }
+}
